@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>令和8年度 夏の大人の遠足｜高知・香川</title>
+<style>
+:root{
+  --paper:#fffdf4;
+  --ink:#26322b;
+  --green:#2f6b4f;
+  --lightgreen:#e8f0e5;
+  --blue:#dbeaf2;
+  --yellow:#f7e9ac;
+  --red:#b14e45;
+  --orange:#d7833c;
+  --rule:#c8c0a7;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:#e7e3d7;color:var(--ink);
+  font-family:"Yu Gothic","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+  line-height:1.75;
+}
+.sheet{
+  width:min(900px,100%);min-height:100vh;margin:auto;background:var(--paper);
+  box-shadow:0 0 28px rgba(0,0,0,.1);
+}
+.cover{
+  min-height:560px;padding:46px 24px 32px;text-align:center;
+  border:13px solid var(--green);
+  outline:4px double var(--green);
+  outline-offset:-22px;
+  background:
+    linear-gradient(rgba(255,253,244,.92),rgba(255,253,244,.92)),
+    repeating-linear-gradient(0deg,transparent 0 31px,#d8e4da 32px);
+}
+.school{font-size:15px;font-weight:900;letter-spacing:.18em}
+h1{
+  margin:20px 0 4px;font-size:clamp(34px,8vw,58px);line-height:1.2;
+  font-family:"Yu Mincho","Hiragino Mincho ProN",serif;
+}
+.catch{font-size:clamp(18px,4vw,25px);color:var(--orange);font-weight:900}
+.illust{font-size:42px;margin:18px 0}
+.date{
+  display:inline-block;background:#fff;padding:8px 14px;border:2px solid var(--ink);
+  border-radius:6px;font-weight:900;transform:rotate(-1deg);
+}
+.namebox{
+  width:min(420px,90%);margin:35px auto 0;padding:13px 16px;
+  border-bottom:2px solid var(--ink);font-size:18px;text-align:left;
+}
+.classline{margin-top:12px;font-size:14px}
+nav{
+  position:sticky;top:0;z-index:10;display:flex;overflow-x:auto;gap:7px;
+  padding:8px 10px;background:rgba(255,253,244,.97);border-bottom:1px solid var(--rule);
+  scrollbar-width:none;
+}
+nav::-webkit-scrollbar{display:none}
+nav a{
+  white-space:nowrap;text-decoration:none;color:var(--ink);font-size:13px;font-weight:900;
+  background:#fff;border:1px solid var(--rule);border-radius:999px;padding:7px 11px;
+}
+main{padding:22px}
+section{margin-bottom:36px;scroll-margin-top:60px}
+h2{
+  margin:0 0 15px;font-size:24px;padding:7px 10px;
+  background:var(--lightgreen);border:2px solid var(--green);
+  font-family:"Yu Mincho","Hiragino Mincho ProN",serif;
+}
+h3{margin:0 0 5px}
+.goal{
+  border:2px dashed var(--orange);border-radius:9px;background:#fff9e6;
+  padding:16px 18px;font-weight:850;font-size:17px;
+}
+.goal strong{color:var(--red)}
+.route{
+  border:2px solid var(--ink);border-radius:8px;background:#fff;
+  padding:14px;text-align:center;font-weight:900;
+}
+.arrow{color:var(--orange);padding:0 3px}
+.timeline{
+  display:grid;grid-template-columns:100px 1fr;border:2px solid var(--ink);background:#fff;
+}
+.timeline > div{padding:11px 12px;border-bottom:1px solid var(--rule)}
+.timeline .tm{font-weight:900;color:var(--green);border-right:1px solid var(--rule)}
+.timeline .last{border-bottom:none}
+.event strong{font-size:17px}
+.sub{font-size:13px;color:#62655f}
+.focus{
+  border:3px double var(--red);background:#fff8f2;padding:16px;border-radius:8px;margin-top:12px;
+}
+.focus-title{font-size:20px;font-weight:900;color:var(--red);text-align:center}
+.steps{counter-reset:num;margin:15px 0 0;padding:0;list-style:none}
+.steps li{
+  position:relative;margin:12px 0;padding:10px 10px 10px 46px;background:#fff;
+  border:1px solid var(--rule);border-radius:8px;
+}
+.steps li:before{
+  counter-increment:num;content:counter(num);
+  position:absolute;left:10px;top:10px;width:27px;height:27px;border-radius:50%;
+  display:grid;place-items:center;background:var(--green);color:#fff;font-weight:900;
+}
+.shop{
+  display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px;
+}
+.card{
+  background:#fff;border:1px solid var(--rule);border-radius:10px;overflow:hidden;
+}
+.cardhead{font-weight:900;font-size:18px;padding:10px 12px;background:var(--blue)}
+.cardbody{padding:13px}
+.tag{
+  display:inline-block;font-size:12px;font-weight:900;padding:2px 8px;margin:0 4px 5px 0;
+  border-radius:999px;background:var(--yellow);
+}
+.map{
+  display:inline-block;margin-top:5px;padding:8px 11px;border-radius:7px;
+  background:var(--green);color:#fff;text-decoration:none;font-weight:900;
+}
+.memo{
+  margin-top:10px;padding:11px 13px;border-left:5px solid var(--orange);background:#fff8e8;
+}
+.rules{
+  padding:14px 18px;background:
+  repeating-linear-gradient(0deg,#fff 0 30px,#d9e5ef 31px);
+  border:1px solid #b9cbd7;border-radius:8px;
+}
+.rules li{margin:6px 0}
+.backup{
+  border:2px solid var(--red);background:#fff6f3;border-radius:8px;padding:14px 16px;
+}
+.backup strong{color:var(--red)}
+.checks{list-style:none;padding:0}
+.checks li:before{content:"□ ";font-weight:900}
+.teacher{
+  display:flex;align-items:center;gap:15px;padding:14px;border:2px dashed var(--green);
+  background:#fff;border-radius:8px;
+}
+.stamp{
+  flex:0 0 88px;height:88px;border:4px double var(--red);border-radius:50%;
+  display:grid;place-items:center;text-align:center;color:var(--red);font-weight:900;
+  transform:rotate(-8deg);
+}
+footer{
+  padding:28px 20px 42px;text-align:center;border-top:4px double var(--green);
+  font-family:"Yu Mincho","Hiragino Mincho ProN",serif;
+}
+.small{font-size:12px;color:#686d67}
+@media(max-width:640px){
+  main{padding:15px}
+  .cover{min-height:520px;padding:40px 17px 28px}
+  .timeline{grid-template-columns:82px 1fr}
+  .timeline>div{padding:9px}
+  .shop{grid-template-columns:1fr}
+  h2{font-size:21px}
+}
+@media print{
+  body{background:#fff}.sheet{box-shadow:none}nav{display:none}
+  .card,.teacher,.focus{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <header class="cover">
+    <div class="school">令和8年度　夏の大人の遠足</div>
+    <h1>高知・香川へ<br>行こう！</h1>
+    <div class="catch">かつお・餃子・芋けんぴ・仁淀川・骨付鳥</div>
+    <div class="illust">🌉　🐟　🍠　🌊　🍗</div>
+    <div class="date">2026年8月21日（金）</div>
+    <div class="namebox">なまえ　＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <div class="classline">参加者：おとな4名（男3名・女1名）　　集合場所：JR垂水駅</div>
+  </header>
+
+  <nav>
+    <a href="#goal">めあて</a>
+    <a href="#schedule">時間割</a>
+    <a href="#hirome">ひろめ攻略</a>
+    <a href="#spots">見学先</a>
+    <a href="#rules">おやくそく</a>
+    <a href="#backup">遅れたら</a>
+  </nav>
+
+  <main>
+    <section id="goal">
+      <h2>1．きょうの めあて</h2>
+      <div class="goal">
+        ① 朝は無理をしない。<br>
+        ② 高知で<strong>やいろ亭の鰹の塩たたき</strong>を食べる。<br>
+        ③ <strong>安兵衛の屋台餃子</strong>も忘れない。<br>
+        ④ 芋けんぴと仁淀川を楽しむ。<br>
+        ⑤ 最後は香川で一鶴の骨付鳥。全員無事に帰る！
+      </div>
+    </section>
+
+    <section>
+      <h2>2．きょうの コース</h2>
+      <div class="route">
+        JR垂水駅 <span class="arrow">→</span>
+        淡路SA <span class="arrow">→</span>
+        ひろめ市場 <span class="arrow">→</span>
+        芋屋金次郎 卸団地店 <span class="arrow">→</span>
+        名越屋沈下橋 <span class="arrow">→</span>
+        一鶴 高松店 <span class="arrow">→</span>
+        JR垂水駅
+      </div>
+    </section>
+
+    <section id="schedule">
+      <h2>3．1日の 時間割</h2>
+      <div class="timeline">
+        <div class="tm">7:30</div>
+        <div class="event"><strong>JR垂水駅 集合</strong><br>全員そろったら垂水ICから出発。</div>
+
+        <div class="tm">8:00〜8:35</div>
+        <div class="event"><strong>淡路SA（下り）で朝ごはん</strong><br>明石海峡大橋を眺めながら軽めに。<div class="sub">昼が本番なので腹6〜7分。</div></div>
+
+        <div class="tm">11:10頃</div>
+        <div class="event"><strong>ひろめ市場 到着</strong><br>まず4人分の席を確保。<div class="sub">ここから「ひろめ市場攻略」が始まります。</div></div>
+
+        <div class="tm">11:15〜</div>
+        <div class="event"><strong>やいろ亭</strong><br>鰹の塩たたき！ 本日の最重要ミッション。</div>
+
+        <div class="tm">12:00〜</div>
+        <div class="event"><strong>ひろめで安兵衛</strong><br>屋台餃子を追加。焼き上がりを待つ時間も考えて早めに注文。</div>
+
+        <div class="tm">12:35〜12:45</div>
+        <div class="event"><strong>ひろめ市場 出発</strong><br>食べすぎ注意。そのあと芋けんぴがあります。</div>
+
+        <div class="tm">13:00〜13:30</div>
+        <div class="event"><strong>芋屋金次郎 卸団地店</strong><br>揚げたて芋けんぴ＋おみやげ。</div>
+
+        <div class="tm">14:15〜14:45</div>
+        <div class="event"><strong>名越屋沈下橋</strong><br>仁淀川の景色と記念写真。</div>
+
+        <div class="tm">14:45頃</div>
+        <div class="event"><strong>高松へ出発</strong><br>伊野IC方面から高速へ。必要なら途中休憩。</div>
+
+        <div class="tm">17:30頃</div>
+        <div class="event"><strong>一鶴 高松店</strong><br>本日の締め。骨付鳥！</div>
+
+        <div class="tm">18:45〜19:00</div>
+        <div class="event"><strong>高松 出発</strong><br>高松道 → 鳴門 → 淡路島 → 垂水。</div>
+
+        <div class="tm last">21:00頃</div>
+        <div class="event last"><strong>JR垂水駅 到着・解散</strong><br>家に帰るまでが遠足です。</div>
+      </div>
+      <p class="small">※時刻は目安。渋滞・駐車場・注文待ち等で変動します。</p>
+    </section>
+
+    <section id="hirome">
+      <h2>4．ひろめ市場 攻略作戦</h2>
+
+      <div class="focus">
+        <div class="focus-title">★ 本日の昼ごはんは「やいろ亭＋安兵衛」★</div>
+        <ol class="steps">
+          <li><b>11:10ごろ到着したら、まず4人分の席を探す。</b><br><span class="sub">荷物だけで長時間占領せず、誰かが席に残る。</span></li>
+          <li><b>やいろ亭へ。</b><br>まずは名物の<strong>鰹の塩たたき</strong>。月〜土は10:00から営業。</li>
+          <li><b>12:00になったら「ひろめで安兵衛」へ。</b><br>屋台餃子を注文。注文後に包んで焼くため待ち時間あり。</li>
+          <li><b>4人でシェア。</b><br>ほかに気になるものがあれば追加。ただし芋けんぴと一鶴のために胃袋を残す。</li>
+        </ol>
+      </div>
+
+      <div class="shop">
+        <div class="card">
+          <div class="cardhead">やいろ亭</div>
+          <div class="cardbody">
+            <span class="tag">第一目標</span><span class="tag">鰹</span>
+            <p><b>狙い：</b>鰹の塩たたき。</p>
+            <p><b>営業時間：</b>月〜土 10:00〜21:20／日 9:00〜21:00。</p>
+            <p>ひろめ市場で鰹を食べるなら、今回はこちらを本命に。</p>
+            <a class="map" href="https://kochike.jp/column/168916/" target="_blank" rel="noopener">公式ページを見る</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="cardhead">ひろめで安兵衛</div>
+          <div class="cardbody">
+            <span class="tag">第二目標</span><span class="tag">屋台餃子</span>
+            <p><b>狙い：</b>パリッと焼いた屋台餃子。</p>
+            <p><b>ひろめ市場公式：</b>月〜土 12:00〜21:00／日・祝 11:00〜20:00。</p>
+            <p>注文を受けてから一つずつ包んで焼くため、時間には少し余裕を。</p>
+            <a class="map" href="https://mfc-group.jp/yasube/" target="_blank" rel="noopener">公式ページを見る</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="memo">
+        <b>遠足係メモ：</b>11時台は「やいろ亭」、12時になったら「安兵衛」。この順番なら営業時間にも合っていて無駄が少ない。
+      </div>
+    </section>
+
+    <section id="spots">
+      <h2>5．見学するところ</h2>
+
+      <div class="shop">
+        <div class="card">
+          <div class="cardhead">淡路サービスエリア（下り）</div>
+          <div class="cardbody">
+            <span class="tag">朝食</span><span class="tag">景色</span>
+            <p>明石海峡大橋を渡ってすぐ。旅行のスタート地点にぴったり。</p>
+            <p>朝はパン・コーヒー・うどんなど軽めに。</p>
+            <a class="map" href="https://www.jb-highway.co.jp/sapa/awaji_down.html" target="_blank" rel="noopener">公式サイトを見る</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="cardhead">芋屋金次郎 卸団地店</div>
+          <div class="cardbody">
+            <span class="tag">おやつ</span><span class="tag">おみやげ</span>
+            <p>高知の芋菓子専門店。店内で揚げた「揚げたて芋けんぴ」が目的。</p>
+            <p>高知市内なので、ひろめ市場から次の仁淀川方面へ向かう前に寄りやすい。</p>
+            <a class="map" href="https://imokin.co.jp/shop/oroshidanchi" target="_blank" rel="noopener">公式サイトを見る</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="cardhead">名越屋沈下橋</div>
+          <div class="cardbody">
+            <span class="tag">仁淀川</span><span class="tag">記念写真</span>
+            <p>高知市から比較的寄りやすい仁淀川スポット。山奥まで入らず、次の高松へ移動しやすいのが今回の決め手。</p>
+            <p><b>注意：</b>沈下橋は今も生活道路。車の通行を妨げない。</p>
+            <a class="map" href="https://niyodoblue.jp/spot/detail.php?id=155" target="_blank" rel="noopener">公式観光ページを見る</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="cardhead">一鶴 高松店</div>
+          <div class="cardbody">
+            <span class="tag">夕食</span><span class="tag">旅の締め</span>
+            <p>香川名物・骨付鳥。「ひなどり」はやわらかく、「おやどり」は歯ごたえと旨味が強い。</p>
+            <p>高松から鳴門・淡路島経由で垂水へ戻るので、今回の帰路に合う店舗。</p>
+            <a class="map" href="https://www.ikkaku.co.jp/honetsukidori.html" target="_blank" rel="noopener">公式サイトを見る</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="rules">
+      <h2>6．遠足の おやくそく</h2>
+      <div class="rules">
+        <ul>
+          <li>集合時間は守りましょう。</li>
+          <li>朝ごはんを食べすぎないこと。</li>
+          <li>「やいろ亭」を食べたからといって満足して、安兵衛を忘れないこと。</li>
+          <li>運転手さんに「あと何分？」を5分おきに聞かないこと。</li>
+          <li>沈下橋では車に十分注意すること。</li>
+          <li>運転担当はアルコールを飲まないこと。</li>
+          <li>一鶴のために胃袋を少し残しておくこと。</li>
+          <li><b>家に帰るまでが遠足です。</b></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="backup">
+      <h2>7．予定より 遅れたら</h2>
+      <div class="backup">
+        <p><strong>30分くらい：</strong> 芋屋金次郎・沈下橋の滞在時間を少し短くする。</p>
+        <p><strong>1時間以上：</strong> 名越屋沈下橋をカットして高松へ。</p>
+        <p><strong>ひろめ市場が大混雑：</strong> やいろ亭と安兵衛の2店を優先。追加メニューを増やしすぎない。</p>
+        <p><strong>雨・増水：</strong> 仁淀川周辺では無理をしない。現地の規制を最優先。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>8．持ちもの</h2>
+      <ul class="checks">
+        <li>スマートフォン</li>
+        <li>モバイルバッテリー</li>
+        <li>免許証・ETCカード（運転する人）</li>
+        <li>飲みもの</li>
+        <li>帽子・タオル</li>
+        <li>折りたたみ傘</li>
+        <li>おみやげ用エコバッグ</li>
+        <li>よく空いた胃袋</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>先生から ひとこと</h2>
+      <div class="teacher">
+        <div class="stamp">安全<br>第一</div>
+        <div>
+          朝から晩まで食べる予定がたくさんあります。<br>
+          ひとつひとつ全力で食べず、<b>4人でシェアする心</b>を忘れないように。<br>
+          無理のない運転で、楽しい一日にしましょう。
+        </div>
+      </div>
+    </section>
+
+    <p class="small">
+      ※やいろ亭・ひろめで安兵衛の営業時間は2026年8月20日時点のひろめ市場公式情報を反映。臨時休業・営業時間変更・交通事情等により変更される場合があります。
+    </p>
+  </main>
+
+  <footer>
+    <b>令和8年度　夏の大人の遠足</b><br>
+    高知・香川　日帰りの旅<br><br>
+    「いっぱい食べて、いっぱい笑って、無事に帰ろう。」
+  </footer>
+</div>
+</body>
+</html>
